@@ -27,3 +27,15 @@ void selection_sort(std::vector<int>& vec) {
         std::swap(vec[i], vec[minimum_index]);
     }
 }
+
+void insertion_sort(std::vector<int>& vec) {
+    for (int i = 0; i < vec.size() - 1; i++) {
+        int sorted_index = i;
+        int key = vec[sorted_index + 1];
+        while (vec[sorted_index] > key && sorted_index >= 0) {
+            vec[sorted_index + 1] = vec[sorted_index];
+            sorted_index--;
+        }
+        vec[sorted_index + 1] = key;
+    }
+}

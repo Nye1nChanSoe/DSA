@@ -44,4 +44,26 @@ void bubble_sort(std::vector<int>& vec);
  */
 void selection_sort(std::vector<int>& vec);
 
+/**
+ * @brief Insertion sort works by building a sorted array
+ *        comparing one element at a time with unsorted array
+ *
+ * - Stable: Yes
+ *
+ * - In-place: Yes
+ *
+ * Time Complexity: O(n) -> best
+ *                  O(n^2) -> Average
+ *                  O(n^2) -> Worst
+ *
+ * Space Complexity: O(1)
+ * 
+ * @note Efficient for small datasets and nearly sorted data.
+ *       Often used in practice for small parts of more complex algorithms
+ *       (like hybrid sorting algorithms).
+ *
+ * @param vec std::vector
+ */
+void insertion_sort(std::vector<int>& vec);
+
 #endif
