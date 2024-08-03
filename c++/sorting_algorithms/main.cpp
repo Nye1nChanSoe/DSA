@@ -23,7 +23,8 @@ int main(int argc, char** argv) {
     std::cout << "Before sorted: ";
     print_vec<int>(vec);
 
-    bubble_sort(vec);
+    // bubble_sort(vec);
+    selection_sort(vec);
 
     std::cout << "After sorted: ";
     print_vec<int>(vec);
