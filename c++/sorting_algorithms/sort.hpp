@@ -66,4 +66,25 @@ void selection_sort(std::vector<int>& vec);
  */
 void insertion_sort(std::vector<int>& vec);
 
+/**
+ * @brief Merge sort works by following the divide and conquer algorithm
+ *        Divides the array into halves recursively, and merged the sorted halves
+ *        recursively back and form the sorted array
+ *
+ * - Stable: Yes
+ *
+ * - In-place: No
+ *
+ * Time Complexity: O(n log n) -> best
+ *                  O(n log n) -> Average
+ *                  O(n log n) -> Worst
+ *
+ * Space Complexity: O(n)
+ * 
+ * @note Stable sorting algorithm, useful for large datasets and external sorting
+ *
+ * @param vec std::vector
+ */
+void merge_sort(std::vector<int>& vec);
+
 #endif
