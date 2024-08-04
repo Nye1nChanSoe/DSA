@@ -1,5 +1,6 @@
 #include "sort.hpp"
 #include <vector>
+#include <algorithm>
 
 void bubble_sort(std::vector<int>& vec) {
     for(int i = 0; i < vec.size() - 1; i++) {
@@ -106,4 +107,29 @@ void quick_sort(std::vector<int>& vec, int start, int end) {
         quick_sort(vec, start, partition_index - 1);
         quick_sort(vec, partition_index + 1, end);
     }
+}
+
+void counting_sort(std::vector<int>& vec) {
+    int max_val = *std::max_element(vec.begin(), vec.end());
+
+    std::vector<int> count_vec(max_val + 1, 0);
+
+    for(int num: vec) {
+        count_vec[num]++;
+    }
+
+
+    for(int i = 1; i < count_vec.size(); i++) {
+        count_vec[i] += count_vec[i - 1];
+    }
+
+    std::vector<int> output_vec(vec.size(), 0);
+    std::reverse(vec.begin(), vec.end());
+
+    for (int num: vec) {
+        output_vec[count_vec[num] - 1] = num;
+        count_vec[num]--;
+    }
+
+    vec = output_vec;
 }

@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include "sort.hpp"
 
 template <typename T>
@@ -18,7 +19,7 @@ void print_vec(std::vector<T>& vec);
 
 
 int main(int argc, char** argv) {
-    std::vector<int> vec = {5, 2, 3, 1, 4, 4};
+    std::vector<int> vec = {5, 2, 3, 1, 4, 4, 5, 2, 3, 1};
 
     std::cout << "Before sorted: ";
     print_vec<int>(vec);
@@ -27,7 +28,8 @@ int main(int argc, char** argv) {
     // selection_sort(vec);
     // insertion_sort(vec);
     // merge_sort(vec);
-    quick_sort(vec, 0, vec.size() - 1);
+    // quick_sort(vec, 0, vec.size() - 1);
+    counting_sort(vec);
 
     std::cout << "After sorted: ";
     print_vec<int>(vec);

@@ -113,4 +113,26 @@ void merge_sort(std::vector<int>& vec);
  */
 void quick_sort(std::vector<int>& vec, int start, int end);
 
+/**
+ * @brief Counting sort creates a count array to count the occurrences of each element
+ *        to determine their position in the sorted output. The original array is
+ *        traversed in reverse to maintain the stability of the order of elements.
+ *
+ * - Stable: Yes
+ *
+ * - In-place: No
+ *
+ * Time Complexity: O(n + k) -> best
+ *                  O(n + k) -> Average
+ *                  O(n + k) -> Worst
+ *
+ * Space Complexity: O(k)
+ *
+ * @note Efficient for sorting integers or objects with integer keys within a fixed range.
+ *       Not suitable for large ranges or floating-point numbers.
+ *
+ * @param vec std::vector
+ */
+void counting_sort(std::vector<int>& vec);
+
 #endif
