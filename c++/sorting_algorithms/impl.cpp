@@ -84,3 +84,26 @@ void merge_sort(std::vector<int>& vec) {
     merge_sort(right);
     merge(left, right, vec);
 }
+
+int partition(std::vector<int>& vec, int start, int end) {
+    int pivot = vec[end];
+    int partition_index = start;
+
+    for (int i = start; i < end; i++) {
+        if (vec[i] <= pivot) {
+            std::swap(vec[i], vec[partition_index]);
+            partition_index++;
+        }
+    }
+
+    std::swap(vec[partition_index], vec[end]);
+    return partition_index;
+}
+
+void quick_sort(std::vector<int>& vec, int start, int end) {
+    if (start < end) {
+        int partition_index = partition(vec, start, end);
+        quick_sort(vec, start, partition_index - 1);
+        quick_sort(vec, partition_index + 1, end);
+    }
+}

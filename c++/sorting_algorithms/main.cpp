@@ -26,7 +26,8 @@ int main(int argc, char** argv) {
     // bubble_sort(vec);
     // selection_sort(vec);
     // insertion_sort(vec);
-    merge_sort(vec);
+    // merge_sort(vec);
+    quick_sort(vec, 0, vec.size() - 1);
 
     std::cout << "After sorted: ";
     print_vec<int>(vec);

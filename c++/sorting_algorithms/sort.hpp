@@ -87,4 +87,30 @@ void insertion_sort(std::vector<int>& vec);
  */
 void merge_sort(std::vector<int>& vec);
 
+/**
+ * @brief Quick sort works by following the divide and conquer algorithm
+ *        Selects a pivot element, partitions the array into left and right
+ *        left side elements smaller than or equal to the pivot and right side elements larger
+ *        than the pivot element. And recursively sorts the subarrays in-place.
+ *
+ * - Stable: No
+ *
+ * - In-place: Yes
+ *
+ * Time Complexity: O(n log n) -> best
+ *                  O(n log n) -> Average
+ *                  O(n^2) -> Worst
+ *
+ * Space Complexity: O(log n)
+ *
+ * @note Very efficient for large datasets. Commonly used in practice
+ *       despite its worst-case scenario due to its average-case performance.
+ *       The choice of pivot and partitioning scheme can mitigate the worst-case.
+ *
+ * @param vec std::vector
+ * @param start starting index
+ * @param end ending index
+ */
+void quick_sort(std::vector<int>& vec, int start, int end);
+
 #endif
