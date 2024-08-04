@@ -19,7 +19,7 @@ void print_vec(std::vector<T>& vec);
 
 
 int main(int argc, char** argv) {
-    std::vector<int> vec = {5, 2, 3, 1, 4, 4, 5, 2, 3, 1};
+    std::vector<int> vec = {5, 2, 3, 1, 4, 4};
 
     std::cout << "Before sorted: ";
     print_vec<int>(vec);
@@ -29,7 +29,8 @@ int main(int argc, char** argv) {
     // insertion_sort(vec);
     // merge_sort(vec);
     // quick_sort(vec, 0, vec.size() - 1);
-    counting_sort(vec);
+    // counting_sort(vec);
+    radix_sort(vec, 10);
 
     std::cout << "After sorted: ";
     print_vec<int>(vec);

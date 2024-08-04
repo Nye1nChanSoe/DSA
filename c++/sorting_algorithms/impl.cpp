@@ -133,3 +133,33 @@ void counting_sort(std::vector<int>& vec) {
 
     vec = output_vec;
 }
+
+void counting_sort_for_radix_sort(std::vector<int>& vec, int digit_place, unsigned int base) {
+    std::vector<int> count_vec(base, 0);
+    std::vector<int> output_vec(vec.size(), 0);
+
+    for (int num: vec) {
+        int digit = (num / digit_place) % 10;
+        count_vec[digit]++;
+    }
+
+    for (int i = 1; i < base; i++) {
+        count_vec[i] += count_vec[i - 1];
+    }
+
+    for (int i = vec.size() - 1; i >= 0; i--) {
+        int digit = (vec[i] / digit_place) % 10;
+        output_vec[count_vec[digit] - 1] = vec[i];
+        count_vec[digit]--;
+    }
+
+    vec = output_vec;
+}
+
+void radix_sort(std::vector<int>& vec, unsigned int base = 10) {
+    int max_val = *std::max_element(vec.begin(), vec.end());
+
+    for (int digit_place = 1; max_val / digit_place > 0; digit_place *= base) {
+        counting_sort_for_radix_sort(vec, digit_place, base);
+    }
+}

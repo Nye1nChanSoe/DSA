@@ -126,13 +126,43 @@ void quick_sort(std::vector<int>& vec, int start, int end);
  *                  O(n + k) -> Average
  *                  O(n + k) -> Worst
  *
- * Space Complexity: O(k)
+ * Space Complexity: O(n + k)
  *
- * @note Efficient for sorting integers or objects with integer keys within a fixed range.
- *       Not suitable for large ranges or floating-point numbers.
+ * @note The range of the input values (k) is not significantly larger than the number of
+ *       elements (n). Specifically, counting sort is most efficient when k = O(n)
+ *       Input values should be non-negative integers. If the values are in a narrow range,
+ *       counting sort is highly efficient.
+ *       The distribution can be arbitrary as long as the range is not excessively large 
+ *       relative to the number of elements.
+
  *
  * @param vec std::vector
  */
 void counting_sort(std::vector<int>& vec);
+
+/**
+ * @brief Radix sort also known as base sort, processes the digits of numbers
+ *        starting from the least significant digit (LSD) to most significant digit (MSD)
+ *        Sorts the numbers by each digit, using a stable sorting algorithm like counting sort
+ *
+ * - Stable: Yes
+ *
+ * - In-place: No
+ *
+ * Time Complexity: O(d⋅(n+b)) -> best
+ *                  O(d⋅(n+b)) -> Average
+ *                  O(d⋅(n+b)) -> Worst
+ *
+ * Space Complexity: O(n + b)
+ *
+ * @note Best for the number of digits (d) in the largest number is small
+ *       compared to the number of elements (n). (b) is the base of the number system.
+ *       Input values can be positive or negative integers, strings,
+ *       or any keys that can be broken down into a series of digits.
+ *
+ * @param vec std::vector
+ * @param base base of the number system eg: 10 for decimal
+ */
+void radix_sort(std::vector<int>& vec, unsigned int base);
 
 #endif
